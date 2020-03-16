@@ -3,6 +3,8 @@ import * as React from 'react';
 import {View, Text, Button} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import SignIn from './pages/SignIn';
+
 const Stack = createStackNavigator();
 
 function Home({navigation}) {
@@ -26,8 +28,9 @@ function Sample({navigation}) {
 export default function Routes() {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={{headerStyle: {backgroundColor: '#7159c1'}}}>
+      initialRouteName="SignIn"
+      screenOptions={{headerShown: false}}>
+      <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Sample" component={Sample} />
     </Stack.Navigator>
